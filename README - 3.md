@@ -281,6 +281,130 @@ Docker镜像是容器运行的基础，默认情况下，将从Docker Hub拉取�
 >
 > ##### 安装WordPress
 >
+> 注意：创建并运行Docker容器（为了方便检测后续wordpress搭建是否成功，需设置端口映射（-p），将容器端口80 映射到主机端口8888，Apache和MySQL需要 systemctl 管理服务启动，需要加上参数 --privileged 来增加权限，并且不能使用默认的bash，要换成 init，否则会提示 Failed to get D-Bus connection: Operation not permitted）
+>
+> ![56](D:\gitrepos\cloudcomputing\images3\56.png)
+>
+> 查看容器：
+>
+> ![57](D:\gitrepos\cloudcomputing\images3\57.png)
+>
+> 进入容器：
+>
+> ![58](D:\gitrepos\cloudcomputing\images3\58.png)
+>
+> 在该容器中安装workpress，参见README-2.md,其中实验截图如下：
+>
+> ###### 1.使用yum工具安装Apache Web服务器
+>
+> ![59](D:\gitrepos\cloudcomputing\images3\59.png)
+>
+> ###### 2.启动Apache Web服务器
+>
+> ![60](D:\gitrepos\cloudcomputing\images3\60.png)
+>
+> ###### 3.测试Apache服务器是否成功运行，找到腾讯云实例的公有IP地址(your_cvm_ip)，在你本地主机的浏览器上输入：
+>
+> ![61](D:\gitrepos\cloudcomputing\images3\61.png)
+>
+> ###### 4.安装MySQL
+>
+> ![62](D:\gitrepos\cloudcomputing\images3\62.png)
+>
+> ![63](D:\gitrepos\cloudcomputing\images3\63.png)
+>
+> ![64](D:\gitrepos\cloudcomputing\images3\64.png)
+>
+> ![65](D:\gitrepos\cloudcomputing\images3\65.png)
+>
+> ###### 5.安装PHP
+>
+> ![66](D:\gitrepos\cloudcomputing\images3\66.png)
+>
+> ![67](D:\gitrepos\cloudcomputing\images3\67.png)
+>
+> ![68](D:\gitrepos\cloudcomputing\images3\68.png)
+>
+> ![69](D:\gitrepos\cloudcomputing\images3\69.png)
+>
+> ![70](D:\gitrepos\cloudcomputing\images3\70.png)
+>
+> ###### 6.安装PHP模块
+>
+> ![71](D:\gitrepos\cloudcomputing\images3\71.png)
+>
+> ![72](D:\gitrepos\cloudcomputing\images3\72.png)
+>
+> ![73](D:\gitrepos\cloudcomputing\images3\73.png)
+>
+> ![74](D:\gitrepos\cloudcomputing\images3\74.png)
+>
+> ###### 7.测试PHP
+>
+> ![75](D:\gitrepos\cloudcomputing\images3\75.png)
+>
+> 该命令使用vim在/var/www/html/处创建一个空白文件info.php，我们添加如下内容：
+>
+> ![76](D:\gitrepos\cloudcomputing\images3\76.png)
+>
+> ###### 8.安装WordPress以及完成相关配置
+>
+> ###### (1)为WordPress创建一个MySQL数据库
+>
+> ![77](D:\gitrepos\cloudcomputing\images3\77.png)
+>
+> ![78](D:\gitrepos\cloudcomputing\images3\78.png)
+>
+> ###### (2)安装WordPress
+>
+> 下载
+>
+> ![79](D:\gitrepos\cloudcomputing\images3\79.png)
+>
+> ![80](D:\gitrepos\cloudcomputing\images3\80.png)
+>
+> 解压
+>
+> ![81](D:\gitrepos\cloudcomputing\images3\81.png)
+>
+> 移动解压的文件
+>
+> ![82](D:\gitrepos\cloudcomputing\images3\82.png)
+>
+> ![83](D:\gitrepos\cloudcomputing\images3\83.png)
+>
+> 在Apache服务目录下为wordpress创建一个文件夹来保存上传的文件：
+>
+> ![84](D:\gitrepos\cloudcomputing\images3\84.png)
+>
+> 对Apache服务器的目录以及wordpress相关文件夹设置访问权限：
+>
+> ![85](D:\gitrepos\cloudcomputing\images3\85.png)
+>
+> ###### (3)配置WordPress
+>
+> ![86](D:\gitrepos\cloudcomputing\images3\86.png)
+>
+> ![87](D:\gitrepos\cloudcomputing\images3\87.png)
+>
+> ###### (4)通过Web界面进一步配置WordPress
+>
+> ![93](D:\gitrepos\cloudcomputing\images3\93.png)
+>
+> ##### 将安装有wordpress的centos镜像推送到docker hub上面
+>
+> ![88](D:\gitrepos\cloudcomputing\images3\88.png)
+>
+> ![89](D:\gitrepos\cloudcomputing\images3\89.png)
+>
+> ![90](D:\gitrepos\cloudcomputing\images3\90.png)
+>
+> ![91](D:\gitrepos\cloudcomputing\images3\91.png)
+>
+> ![92](D:\gitrepos\cloudcomputing\images3\92.png)
+>
+> #### *下面这个是一开始没理解好题目意思的时候，直接拉取wordpress和mariadb下来创建了一个网站的过程：（以后要安装workpress就可以用这个方法，方便，不用再按README-2.md里面那样繁琐的步骤去安装）*
+>
 > 首先让我们拉取WordPress的镜像
 >
 > ![30](D:\gitrepos\cloudcomputing\images3\30.png)
