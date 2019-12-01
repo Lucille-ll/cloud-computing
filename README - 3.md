@@ -473,6 +473,38 @@ Docker镜像是容器运行的基础，默认情况下，将从Docker Hub拉取�
 
 ![46](D:\gitrepos\cloudcomputing\images3\46.png)
 
+#### 还可以通过编写dockerfile来安装wordpress
+
+因为这里我没有办法做到只通过一个镜像来安装wordpress,所以就不给出残缺的实验过程，但是看了那么多有关于dockerfile的编写教材知识，有一个写的比较干净利落的贴出来给大家看看：
+
+<https://www.cnblogs.com/lingfengblogs/p/11093246.html>
+
+同时如果在实验过程中有遇到 yum用不了的情况，这里有个解决方法;
+
+<https://blog.csdn.net/xiaohuixing16134/article/details/82728841>
+
+![94](D:\gitrepos\cloudcomputing\images3\94.png)
+
+创建镜像的指令为：
+
+![95](D:\gitrepos\cloudcomputing\images3\95.png)
+
+运行结果：
+
+![96](D:\gitrepos\cloudcomputing\images3\96.png)
+
+查看镜像：
+
+![97](D:\gitrepos\cloudcomputing\images3\97.png)
+
+> 感觉做这个实验，虽然没有把dockerfile部署wordpress完整的做出来，但是，docker的指令，特别是删除镜像或者容器的指令的使用现在已经十分熟悉了。
+>
+> 有在一直尝试在一个dockerfile里面部署wordpress，不管是centos也好还是ubuntu也好，只能说坑不少，还不好填，技术长也给了我很悉心的帮助，真的十分感恩，但是，我还是没有办法搞出来，但也不是说没做出来就等于没有收获，希望老师之后能出个教程，既然不会就好好学习。
+
+然后这里有个有关于Docker 容器后台运行和前台运行的区别：
+
+<https://zhidao.baidu.com/question/1177563997920000339.html?qbl=relate_question_0&word=dockerfile%C0%EF%C3%E6%B5%C4systemctl>
+
 
 
 ### **将带有****WordPress****的****CentOS****镜像推送到容器仓库** 
